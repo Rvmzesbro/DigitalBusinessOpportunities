@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DigitalBusinessOpportunitiesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brigades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="EquipmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="CompositionBrigades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrigadeId" Type="int" />
+    <Property Name="WorkerId" Type="int" />
+  </EntityType>
+  <EntityType Name="CompositionOrderMaterials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Sum" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="WarehouseId" Type="int" />
+  </EntityType>
+  <EntityType Name="CompositionProductions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Unit" Type="varchar(max)" />
+    <Property Name="SpecificationId" Type="int" />
+  </EntityType>
+  <EntityType Name="CompositionSales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleId" Type="int" />
+    <Property Name="WarehouseId" Type="int" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Sum" Type="decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="CompositionTransfers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="FromWarehouseId" Type="int" />
+    <Property Name="ToWarehouseId" Type="int" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="TransferId" Type="int" />
+  </EntityType>
+  <EntityType Name="Equipments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="WorkshopId" Type="int" />
+  </EntityType>
+  <EntityType Name="LaborProductions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkType" Type="int" />
+    <Property Name="BrigadeId" Type="int" />
+    <Property Name="StageId" Type="int" />
+    <Property Name="CountTime" Type="int" />
+  </EntityType>
+  <EntityType Name="LaborSpecifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StageId" Type="int" />
+    <Property Name="WorkTypeId" Type="int" />
+    <Property Name="CountMinut" Type="int" />
+  </EntityType>
+  <EntityType Name="MaterialProductions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Unit" Type="varchar(max)" />
+    <Property Name="WarehouseId" Type="int" />
+    <Property Name="StageId" Type="int" />
+  </EntityType>
+  <EntityType Name="MaterialSpecifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StageId" Type="int" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Unit" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Nomenclatures">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Type" Type="varchar(max)" />
+    <Property Name="Article" Type="bigint" />
+    <Property Name="Unit" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="OrderProductions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="OrderPurchaseMaterials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierName" Type="varchar(max)" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientName" Type="varchar(max)" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="Specifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Unit" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="StageProductions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="CompositionOrderId" Type="int" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Unit" Type="varchar(max)" />
+    <Property Name="StageNumber" Type="int" />
+    <Property Name="StageName" Type="int" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="WarehouseId" Type="int" />
+  </EntityType>
+  <EntityType Name="StageSpecifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberStage" Type="int" />
+    <Property Name="NameStage" Type="int" />
+    <Property Name="SpecificationId" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TransferWarehouses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="WarehouseBalances">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WarehouseId" Type="int" />
+    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
+  </EntityType>
+  <EntityType Name="Warehouses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Workshops">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="WorkTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="CostPerHour" Type="decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <Association Name="FK_Brigades_Equipments">
+    <End Role="Equipments" Type="Self.Equipments" Multiplicity="0..1" />
+    <End Role="Brigades" Type="Self.Brigades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Brigades">
+        <PropertyRef Name="EquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionBrigades_Brigades">
+    <End Role="Brigades" Type="Self.Brigades" Multiplicity="0..1" />
+    <End Role="CompositionBrigades" Type="Self.CompositionBrigades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brigades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionBrigades">
+        <PropertyRef Name="BrigadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionBrigades_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="0..1" />
+    <End Role="CompositionBrigades" Type="Self.CompositionBrigades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionBrigades">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionOrderMaterials_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="CompositionOrderMaterials" Type="Self.CompositionOrderMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionOrderMaterials">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionOrderMaterials_OrderPurchaseMaterials">
+    <End Role="OrderPurchaseMaterials" Type="Self.OrderPurchaseMaterials" Multiplicity="0..1" />
+    <End Role="CompositionOrderMaterials" Type="Self.CompositionOrderMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderPurchaseMaterials">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionOrderMaterials">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionOrderMaterials_Warehouses">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="0..1" />
+    <End Role="CompositionOrderMaterials" Type="Self.CompositionOrderMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionOrderMaterials">
+        <PropertyRef Name="WarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionProductions_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="CompositionProductions" Type="Self.CompositionProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionProductions">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionProductions_OrderProductions">
+    <End Role="OrderProductions" Type="Self.OrderProductions" Multiplicity="0..1" />
+    <End Role="CompositionProductions" Type="Self.CompositionProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderProductions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionProductions">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionProductions_Specifications">
+    <End Role="Specifications" Type="Self.Specifications" Multiplicity="0..1" />
+    <End Role="CompositionProductions" Type="Self.CompositionProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specifications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionProductions">
+        <PropertyRef Name="SpecificationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionSales_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="CompositionSales" Type="Self.CompositionSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionSales">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionSales_Sales">
+    <End Role="Sales" Type="Self.Sales" Multiplicity="0..1" />
+    <End Role="CompositionSales" Type="Self.CompositionSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionSales">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionSales_Warehouses">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="0..1" />
+    <End Role="CompositionSales" Type="Self.CompositionSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionSales">
+        <PropertyRef Name="WarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionTransfers_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="CompositionTransfers" Type="Self.CompositionTransfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionTransfers">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionTransfers_TransferWarehouses">
+    <End Role="TransferWarehouses" Type="Self.TransferWarehouses" Multiplicity="0..1" />
+    <End Role="CompositionTransfers" Type="Self.CompositionTransfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransferWarehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionTransfers">
+        <PropertyRef Name="TransferId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionTransfers_Warehouses">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="0..1" />
+    <End Role="CompositionTransfers" Type="Self.CompositionTransfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionTransfers">
+        <PropertyRef Name="FromWarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompositionTransfers_Warehouses1">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="0..1" />
+    <End Role="CompositionTransfers" Type="Self.CompositionTransfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompositionTransfers">
+        <PropertyRef Name="ToWarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipments_Workshops">
+    <End Role="Workshops" Type="Self.Workshops" Multiplicity="0..1" />
+    <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workshops">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipments">
+        <PropertyRef Name="WorkshopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LaborProductions_Brigades">
+    <End Role="Brigades" Type="Self.Brigades" Multiplicity="0..1" />
+    <End Role="LaborProductions" Type="Self.LaborProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brigades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LaborProductions">
+        <PropertyRef Name="BrigadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LaborProductions_StageProductions">
+    <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="0..1" />
+    <End Role="LaborProductions" Type="Self.LaborProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StageProductions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LaborProductions">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LaborProductions_WorkTypes">
+    <End Role="WorkTypes" Type="Self.WorkTypes" Multiplicity="0..1" />
+    <End Role="LaborProductions" Type="Self.LaborProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LaborProductions">
+        <PropertyRef Name="WorkType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LaborSpecifications_StageSpecifications">
+    <End Role="StageSpecifications" Type="Self.StageSpecifications" Multiplicity="0..1" />
+    <End Role="LaborSpecifications" Type="Self.LaborSpecifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StageSpecifications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LaborSpecifications">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LaborSpecifications_WorkTypes">
+    <End Role="WorkTypes" Type="Self.WorkTypes" Multiplicity="0..1" />
+    <End Role="LaborSpecifications" Type="Self.LaborSpecifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LaborSpecifications">
+        <PropertyRef Name="WorkTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialProductions_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="MaterialProductions" Type="Self.MaterialProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaterialProductions">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialProductions_StageProductions">
+    <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="0..1" />
+    <End Role="MaterialProductions" Type="Self.MaterialProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StageProductions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaterialProductions">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialProductions_Warehouses">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="0..1" />
+    <End Role="MaterialProductions" Type="Self.MaterialProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaterialProductions">
+        <PropertyRef Name="WarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialSpecifications_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="MaterialSpecifications" Type="Self.MaterialSpecifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaterialSpecifications">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialSpecifications_StageSpecifications">
+    <End Role="StageSpecifications" Type="Self.StageSpecifications" Multiplicity="0..1" />
+    <End Role="MaterialSpecifications" Type="Self.MaterialSpecifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StageSpecifications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaterialSpecifications">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specifications_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="Specifications" Type="Self.Specifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Specifications">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StageProductions_CompositionProductions">
+    <End Role="CompositionProductions" Type="Self.CompositionProductions" Multiplicity="0..1" />
+    <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompositionProductions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StageProductions">
+        <PropertyRef Name="CompositionOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StageProductions_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StageProductions">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StageProductions_OrderProductions">
+    <End Role="OrderProductions" Type="Self.OrderProductions" Multiplicity="0..1" />
+    <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderProductions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StageProductions">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StageProductions_Warehouses">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="0..1" />
+    <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StageProductions">
+        <PropertyRef Name="WarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StageSpecifications_Specifications">
+    <End Role="Specifications" Type="Self.Specifications" Multiplicity="0..1" />
+    <End Role="StageSpecifications" Type="Self.StageSpecifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specifications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StageSpecifications">
+        <PropertyRef Name="SpecificationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WarehouseBalances_Nomenclatures">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="WarehouseBalances" Type="Self.WarehouseBalances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WarehouseBalances">
+        <PropertyRef Name="NomenclatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WarehouseBalances_Warehouses">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="0..1" />
+    <End Role="WarehouseBalances" Type="Self.WarehouseBalances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WarehouseBalances">
+        <PropertyRef Name="WarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище DigitalBusinessOpportunitiesModelContainer">
+    <EntitySet Name="Brigades" EntityType="Self.Brigades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompositionBrigades" EntityType="Self.CompositionBrigades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompositionOrderMaterials" EntityType="Self.CompositionOrderMaterials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompositionProductions" EntityType="Self.CompositionProductions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompositionSales" EntityType="Self.CompositionSales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompositionTransfers" EntityType="Self.CompositionTransfers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipments" EntityType="Self.Equipments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LaborProductions" EntityType="Self.LaborProductions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LaborSpecifications" EntityType="Self.LaborSpecifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaterialProductions" EntityType="Self.MaterialProductions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaterialSpecifications" EntityType="Self.MaterialSpecifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nomenclatures" EntityType="Self.Nomenclatures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderProductions" EntityType="Self.OrderProductions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderPurchaseMaterials" EntityType="Self.OrderPurchaseMaterials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specifications" EntityType="Self.Specifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StageProductions" EntityType="Self.StageProductions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StageSpecifications" EntityType="Self.StageSpecifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransferWarehouses" EntityType="Self.TransferWarehouses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WarehouseBalances" EntityType="Self.WarehouseBalances" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warehouses" EntityType="Self.Warehouses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workshops" EntityType="Self.Workshops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkTypes" EntityType="Self.WorkTypes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Brigades_Equipments" Association="Self.FK_Brigades_Equipments">
+      <End Role="Equipments" EntitySet="Equipments" />
+      <End Role="Brigades" EntitySet="Brigades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionBrigades_Brigades" Association="Self.FK_CompositionBrigades_Brigades">
+      <End Role="Brigades" EntitySet="Brigades" />
+      <End Role="CompositionBrigades" EntitySet="CompositionBrigades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionBrigades_Workers" Association="Self.FK_CompositionBrigades_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="CompositionBrigades" EntitySet="CompositionBrigades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionOrderMaterials_Nomenclatures" Association="Self.FK_CompositionOrderMaterials_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="CompositionOrderMaterials" EntitySet="CompositionOrderMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionOrderMaterials_OrderPurchaseMaterials" Association="Self.FK_CompositionOrderMaterials_OrderPurchaseMaterials">
+      <End Role="OrderPurchaseMaterials" EntitySet="OrderPurchaseMaterials" />
+      <End Role="CompositionOrderMaterials" EntitySet="CompositionOrderMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionOrderMaterials_Warehouses" Association="Self.FK_CompositionOrderMaterials_Warehouses">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="CompositionOrderMaterials" EntitySet="CompositionOrderMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionProductions_Nomenclatures" Association="Self.FK_CompositionProductions_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="CompositionProductions" EntitySet="CompositionProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionProductions_OrderProductions" Association="Self.FK_CompositionProductions_OrderProductions">
+      <End Role="OrderProductions" EntitySet="OrderProductions" />
+      <End Role="CompositionProductions" EntitySet="CompositionProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionProductions_Specifications" Association="Self.FK_CompositionProductions_Specifications">
+      <End Role="Specifications" EntitySet="Specifications" />
+      <End Role="CompositionProductions" EntitySet="CompositionProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionSales_Nomenclatures" Association="Self.FK_CompositionSales_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="CompositionSales" EntitySet="CompositionSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionSales_Sales" Association="Self.FK_CompositionSales_Sales">
+      <End Role="Sales" EntitySet="Sales" />
+      <End Role="CompositionSales" EntitySet="CompositionSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionSales_Warehouses" Association="Self.FK_CompositionSales_Warehouses">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="CompositionSales" EntitySet="CompositionSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionTransfers_Nomenclatures" Association="Self.FK_CompositionTransfers_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="CompositionTransfers" EntitySet="CompositionTransfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionTransfers_TransferWarehouses" Association="Self.FK_CompositionTransfers_TransferWarehouses">
+      <End Role="TransferWarehouses" EntitySet="TransferWarehouses" />
+      <End Role="CompositionTransfers" EntitySet="CompositionTransfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionTransfers_Warehouses" Association="Self.FK_CompositionTransfers_Warehouses">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="CompositionTransfers" EntitySet="CompositionTransfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompositionTransfers_Warehouses1" Association="Self.FK_CompositionTransfers_Warehouses1">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="CompositionTransfers" EntitySet="CompositionTransfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipments_Workshops" Association="Self.FK_Equipments_Workshops">
+      <End Role="Workshops" EntitySet="Workshops" />
+      <End Role="Equipments" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LaborProductions_Brigades" Association="Self.FK_LaborProductions_Brigades">
+      <End Role="Brigades" EntitySet="Brigades" />
+      <End Role="LaborProductions" EntitySet="LaborProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LaborProductions_StageProductions" Association="Self.FK_LaborProductions_StageProductions">
+      <End Role="StageProductions" EntitySet="StageProductions" />
+      <End Role="LaborProductions" EntitySet="LaborProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LaborProductions_WorkTypes" Association="Self.FK_LaborProductions_WorkTypes">
+      <End Role="WorkTypes" EntitySet="WorkTypes" />
+      <End Role="LaborProductions" EntitySet="LaborProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LaborSpecifications_StageSpecifications" Association="Self.FK_LaborSpecifications_StageSpecifications">
+      <End Role="StageSpecifications" EntitySet="StageSpecifications" />
+      <End Role="LaborSpecifications" EntitySet="LaborSpecifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LaborSpecifications_WorkTypes" Association="Self.FK_LaborSpecifications_WorkTypes">
+      <End Role="WorkTypes" EntitySet="WorkTypes" />
+      <End Role="LaborSpecifications" EntitySet="LaborSpecifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialProductions_Nomenclatures" Association="Self.FK_MaterialProductions_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="MaterialProductions" EntitySet="MaterialProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialProductions_StageProductions" Association="Self.FK_MaterialProductions_StageProductions">
+      <End Role="StageProductions" EntitySet="StageProductions" />
+      <End Role="MaterialProductions" EntitySet="MaterialProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialProductions_Warehouses" Association="Self.FK_MaterialProductions_Warehouses">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="MaterialProductions" EntitySet="MaterialProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialSpecifications_Nomenclatures" Association="Self.FK_MaterialSpecifications_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="MaterialSpecifications" EntitySet="MaterialSpecifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialSpecifications_StageSpecifications" Association="Self.FK_MaterialSpecifications_StageSpecifications">
+      <End Role="StageSpecifications" EntitySet="StageSpecifications" />
+      <End Role="MaterialSpecifications" EntitySet="MaterialSpecifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specifications_Nomenclatures" Association="Self.FK_Specifications_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="Specifications" EntitySet="Specifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StageProductions_CompositionProductions" Association="Self.FK_StageProductions_CompositionProductions">
+      <End Role="CompositionProductions" EntitySet="CompositionProductions" />
+      <End Role="StageProductions" EntitySet="StageProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StageProductions_Nomenclatures" Association="Self.FK_StageProductions_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="StageProductions" EntitySet="StageProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StageProductions_OrderProductions" Association="Self.FK_StageProductions_OrderProductions">
+      <End Role="OrderProductions" EntitySet="OrderProductions" />
+      <End Role="StageProductions" EntitySet="StageProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StageProductions_Warehouses" Association="Self.FK_StageProductions_Warehouses">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="StageProductions" EntitySet="StageProductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StageSpecifications_Specifications" Association="Self.FK_StageSpecifications_Specifications">
+      <End Role="Specifications" EntitySet="Specifications" />
+      <End Role="StageSpecifications" EntitySet="StageSpecifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WarehouseBalances_Nomenclatures" Association="Self.FK_WarehouseBalances_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="WarehouseBalances" EntitySet="WarehouseBalances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WarehouseBalances_Warehouses" Association="Self.FK_WarehouseBalances_Warehouses">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="WarehouseBalances" EntitySet="WarehouseBalances" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

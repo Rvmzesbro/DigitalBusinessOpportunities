@@ -1,0 +1,45 @@
+﻿<Page x:Class="DigitalBusinessOpportunities.Pages.AddEditMaterials"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DigitalBusinessOpportunities.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditMaterials">
+
+    <Viewbox Margin="100">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0"
+                        Margin="0 0 10 0"
+                        >
+                <TextBlock Text="Выберите материал"/>
+                <ComboBox x:Name="CBMaterial"
+          Height="20"
+          Width="100"/>
+                <TextBlock Text="Введите цену"/>
+                <TextBox x:Name="TBPrice"
+                             Height="20"
+                         Width="100"
+                         Margin="0 0 0 10"/>
+                
+                <Button x:Name="BTAdd"
+                        Content="Ok"
+                        Click="BTAdd_Click"/>
+            </StackPanel>
+                
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Введите количество"/>
+                <TextBox x:Name="TBCount"
+                             Height="20"
+                         Width="100"/>
+                
+            </StackPanel>
+        </Grid>
+    </Viewbox>
+</Page>

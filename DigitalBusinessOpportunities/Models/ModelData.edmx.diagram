@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="50a4e55e59e0472bac4584c5939a065f" Name="Diagram1" ZoomLevel="192">
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Brigades" Width="1.5" PointX="18.25" PointY="30.25" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.CompositionBrigades" Width="1.5" PointX="20.5" PointY="30.375" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.CompositionOrderMaterials" Width="1.5" PointX="13.75" PointY="13.625" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.CompositionProductions" Width="1.5" PointX="16" PointY="23.75" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.CompositionSales" Width="1.5" PointX="16.75" PointY="13.625" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.CompositionTransfers" Width="1.5" PointX="13.75" PointY="9.625" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Equipments" Width="1.5" PointX="16" PointY="30.375" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.LaborProductions" Width="1.5" PointX="20.5" PointY="20.75" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.LaborSpecifications" Width="1.5" PointX="18.25" PointY="34.875" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.MaterialProductions" Width="1.5" PointX="20.5" PointY="16.25" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.MaterialSpecifications" Width="1.5" PointX="18.25" PointY="24" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Nomenclatures" Width="1.5" PointX="11.5" PointY="13.25" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.OrderProductions" Width="1.5" PointX="13.75" PointY="24.125" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.OrderPurchaseMaterials" Width="1.5" PointX="11.5" PointY="21.125" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Sales" Width="1.5" PointX="14.5" PointY="6.125" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Specifications" Width="1.5" PointX="13.75" PointY="34.625" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.StageProductions" Width="1.5" PointX="18.25" PointY="18" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.StageSpecifications" Width="1.5" PointX="16" PointY="34.75" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.sysdiagrams" Width="1.5" PointX="11.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.TransferWarehouses" Width="1.5" PointX="11.5" PointY="18" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.WarehouseBalances" Width="1.5" PointX="13.75" PointY="18" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Warehouses" Width="1.5" PointX="11.5" PointY="8.5" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Workers" Width="1.5" PointX="18.25" PointY="38.625" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Workshops" Width="1.5" PointX="13.75" PointY="30.625" />
+        <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.WorkTypes" Width="1.5" PointX="18.25" PointY="27.5" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_Brigades_Equipments" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionBrigades_Brigades" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_LaborProductions_Brigades" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionBrigades_Workers" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionOrderMaterials_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionOrderMaterials_OrderPurchaseMaterials" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionOrderMaterials_Warehouses" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionProductions_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionProductions_OrderProductions" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionProductions_Specifications" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_StageProductions_CompositionProductions" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionSales_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionSales_Sales" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionSales_Warehouses" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionTransfers_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionTransfers_TransferWarehouses" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionTransfers_Warehouses" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_CompositionTransfers_Warehouses1" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_Equipments_Workshops" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_LaborProductions_StageProductions" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_LaborProductions_WorkTypes" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_LaborSpecifications_StageSpecifications" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_LaborSpecifications_WorkTypes" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_MaterialProductions_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_MaterialProductions_StageProductions" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_MaterialProductions_Warehouses" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_StageSpecifications" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_Specifications_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_StageProductions_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_WarehouseBalances_Nomenclatures" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_StageProductions_OrderProductions" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_StageSpecifications_Specifications" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_StageProductions_Warehouses" />
+        <AssociationConnector Association="DigitalBusinessOpportunitiesModel.FK_WarehouseBalances_Warehouses" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
