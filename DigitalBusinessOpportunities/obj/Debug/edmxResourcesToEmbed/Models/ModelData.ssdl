@@ -136,16 +136,13 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SupplierName" Type="varchar(max)" />
     <Property Name="Date" Type="datetime" />
-    <Property Name="Description" Type="text" />
   </EntityType>
   <EntityType Name="Sales">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ClientName" Type="varchar(max)" />
     <Property Name="Date" Type="datetime" />
-    <Property Name="Description" Type="text" />
   </EntityType>
   <EntityType Name="Specifications">
     <Key>

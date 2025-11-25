@@ -77,3 +77,9 @@ C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalB
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\CompositionOrder.g.cs
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\CompositionOrder.baml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditSales.g.cs
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditSales.baml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\CompositiomSalesOrder.g.cs
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\CompositiomSalesOrder.baml

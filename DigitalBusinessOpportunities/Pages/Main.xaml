@@ -24,22 +24,29 @@
 
         <Viewbox Grid.Row="1"
                  Margin="10">
-            <TabControl Width="1300"
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TabControl Width="1300"
                         Height="700">
-                <TabItem x:Name="TIPurchase"
+
+                    <TabItem x:Name="TIPurchase"
                          Header="Закупки">
-                    <TabControl Width="1300"
-                        Height="650">
-                        <TabItem Header="Закупка материалов">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
+                        <TabControl Width="1300"
+                        Height="700">
+
+
+                            <TabItem Header="Закупка материалов"
+                                 x:Name="TIPurchaseMaterial">
+
+
 
                                 <DataGrid x:Name="DGPurchase"
           IsReadOnly="True"
-          AutoGenerateColumns="False">
+          AutoGenerateColumns="False"
+                                          MouseDoubleClick="DGPurchase_MouseDoubleClick">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures.Name}"/>
                                         <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
@@ -47,78 +54,113 @@
                                         <DataGridTextColumn Header="Сумма" Binding="{Binding GetSum}"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
-                                <StackPanel Orientation="Horizontal"
-                                             Grid.Row="1">
-                                    <Button x:Name="BTAdd"
-                                            Content="Добавить"
-                                            Click="BTAdd_Click"/>
-                                    <Button x:Name="BTRemove"
-                                            Content="Удалить"
-                                            Click="BTRemove_Click"/>
 
-                                    <Button
-        x:Name="BTBuy"
-        Content="Заказать"
-        
-        
-        Click="BTBuy_Click"/>    
-                                </StackPanel>
+
+
+
+
+                            </TabItem>
+
+
+                            <TabItem Header="Заказы">
+                                <DataGrid x:Name="DGOrder"
+              IsReadOnly="True"
+              AutoGenerateColumns="False"
+                                      MouseDoubleClick="DGOrder_MouseDoubleClick">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
+                                        <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+
+
+                    <TabItem x:Name="TISale"
+         Header="Продажи">
+                        <TabControl Width="1300"
+                        Height="700">
+                            <TabItem Header="Продажа товаров"
+                                     x:Name="TISalesNomenclature">
                                 
 
-                            </Grid>
+                                    <DataGrid x:Name="DGCompositionSales"
+  IsReadOnly="True"
+  AutoGenerateColumns="False"
+                                  MouseDoubleClick="DGCompositionSales_MouseDoubleClick">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures.Name}"/>
+                                            <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                                            <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                            <DataGridTextColumn Header="Сумма" Binding="{Binding GetSum}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    
+
+
+                            </TabItem>
                             
-                        </TabItem>
-                        <TabItem Header="Заказы">
-                            <DataGrid x:Name="DGOrder"
-              IsReadOnly="True"
-              AutoGenerateColumns="False">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Номенклатура"/>
-                                    <DataGridTextColumn Header="Цена"/>
-                                    <DataGridTextColumn Header="Количество"/>
-                                    <DataGridTextColumn Header="Сумма"/>
-                                </DataGrid.Columns>
-                            </DataGrid>
-                        </TabItem>
-                    </TabControl>
-                </TabItem>
-                <TabItem x:Name="TISale"
-         Header="Продажи">
-                    <TabControl Width="1300"
-                        Height="700">
-                        <TabItem Header="das">
-
-                        </TabItem>
-                        <TabItem Header="das">
-
-                        </TabItem>
-                    </TabControl>
-                </TabItem>
-                <TabItem x:Name="TIProduction"
+                            
+                            <TabItem Header="Все продажи">
+                                <DataGrid x:Name="DGSales"
+IsReadOnly="True"
+AutoGenerateColumns="False"
+                                MouseDoubleClick="DGSales_MouseDoubleClick">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
+                                        <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </TabItem>
+                            
+                            
+                        </TabControl>
+                    </TabItem>
+                    <TabItem x:Name="TIProduction"
 Header="Производство">
-                    <TabControl Width="1300"
+                        <TabControl Width="1300"
                         Height="700">
-                        <TabItem Header="das">
+                            <TabItem Header="das">
 
-                        </TabItem>
-                        <TabItem Header="das">
+                            </TabItem>
+                            <TabItem Header="das">
 
-                        </TabItem>
-                    </TabControl>
-                </TabItem>
-                <TabItem x:Name="TIOther"
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <TabItem x:Name="TIOther"
 Header="Прочее">
-                    <TabControl Width="1300"
+                        <TabControl Width="1300"
                         Height="700">
-                        <TabItem Header="das">
+                            <TabItem Header="das">
 
-                        </TabItem>
-                        <TabItem Header="das">
+                            </TabItem>
+                            <TabItem Header="das">
 
-                        </TabItem>
-                    </TabControl>
-                </TabItem>
-            </TabControl>
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                </TabControl>
+
+                <StackPanel Orientation="Horizontal"
+                                     Grid.Row="1">
+                    <Button x:Name="BTAdd"
+                                    Content="Добавить"
+                                    Click="BTAdd_Click"/>
+                    <Button x:Name="BTRemove"
+                                    Content="Удалить"
+                                    Click="BTRemove_Click"/>
+
+                    <Button
+x:Name="BTBuy"
+Content="Заказать"
+
+
+Click="BTBuy_Click"/>
+                </StackPanel>
+            </Grid>
+            
         </Viewbox>
     </Grid>
 </Page>

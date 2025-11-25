@@ -345,7 +345,6 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Date" Type="DateTime" Precision="3" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CompositionOrderMaterials" Relationship="DigitalBusinessOpportunitiesModel.FK_CompositionOrderMaterials_OrderPurchaseMaterials" FromRole="OrderPurchaseMaterials" ToRole="CompositionOrderMaterials" />
   </EntityType>
   <EntityType Name="Sales">
@@ -353,9 +352,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ClientName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Date" Type="DateTime" Precision="3" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CompositionSales" Relationship="DigitalBusinessOpportunitiesModel.FK_CompositionSales_Sales" FromRole="Sales" ToRole="CompositionSales" />
   </EntityType>
   <EntityType Name="Specifications">

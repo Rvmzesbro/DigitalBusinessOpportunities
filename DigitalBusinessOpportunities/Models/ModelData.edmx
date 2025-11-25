@@ -141,16 +141,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SupplierName" Type="varchar(max)" />
           <Property Name="Date" Type="datetime" />
-          <Property Name="Description" Type="text" />
         </EntityType>
         <EntityType Name="Sales">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClientName" Type="varchar(max)" />
           <Property Name="Date" Type="datetime" />
-          <Property Name="Description" Type="text" />
         </EntityType>
         <EntityType Name="Specifications">
           <Key>
@@ -1178,7 +1175,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CompositionOrderMaterials" Relationship="DigitalBusinessOpportunitiesModel.FK_CompositionOrderMaterials_OrderPurchaseMaterials" FromRole="OrderPurchaseMaterials" ToRole="CompositionOrderMaterials" />
         </EntityType>
         <EntityType Name="Sales">
@@ -1186,9 +1182,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClientName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CompositionSales" Relationship="DigitalBusinessOpportunitiesModel.FK_CompositionSales_Sales" FromRole="Sales" ToRole="CompositionSales" />
         </EntityType>
         <EntityType Name="Specifications">
@@ -1878,7 +1872,6 @@
           <EntitySetMapping Name="OrderPurchaseMaterials">
             <EntityTypeMapping TypeName="DigitalBusinessOpportunitiesModel.OrderPurchaseMaterials">
               <MappingFragment StoreEntitySet="OrderPurchaseMaterials">
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -1888,9 +1881,7 @@
           <EntitySetMapping Name="Sales">
             <EntityTypeMapping TypeName="DigitalBusinessOpportunitiesModel.Sales">
               <MappingFragment StoreEntitySet="Sales">
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

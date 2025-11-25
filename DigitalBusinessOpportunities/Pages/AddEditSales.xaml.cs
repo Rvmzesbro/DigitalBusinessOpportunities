@@ -11,28 +11,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DigitalBusinessOpportunities.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditMaterials.xaml
+    /// Логика взаимодействия для AddEditSales.xaml
     /// </summary>
-    public partial class AddEditMaterials : Page
+    public partial class AddEditSales : Page
     {
-        public CompositionOrderMaterials material;
-        public AddEditMaterials(CompositionOrderMaterials compositionOrderMaterials)
+        public CompositionSales sales;
+        public AddEditSales(CompositionSales compositionSales)
         {
             InitializeComponent();
             Bindings();
-            material = compositionOrderMaterials;
-            DataContext = material;
+            sales = compositionSales;
+            DataContext = sales;
         }
 
         private void Bindings()
         {
-                CBMaterial.ItemsSource = App.db.Nomenclatures.Where(p => p.Type == "сырье" || p.Type == "полуфабрикат").ToList(); 
+            CBMaterial.ItemsSource = App.db.Nomenclatures.Where(p => p.Type == "готовая продукция").ToList();
         }
 
         private void BTAdd_Click(object sender, RoutedEventArgs e)
@@ -43,24 +44,25 @@ namespace DigitalBusinessOpportunities.Pages
             }
             else
             {
-               
-                if (material == null)
+
+                if (sales == null)
                 {
                     if (!decimal.TryParse(TBPrice.Text, out decimal result)) return;
                     if (!decimal.TryParse(TBCount.Text, out decimal result1)) return;
                     var selectedMaterial = CBMaterial.SelectedItem as Nomenclatures;
-                    var newComposition = new CompositionOrderMaterials()
+
+                    var newComposition = new CompositionSales()
                     {
                         NomenclatureId = selectedMaterial.Id,
                         Price = decimal.Parse(TBPrice.Text),
                         Count = decimal.Parse(TBCount.Text),
-                        OrderId = null,
-                        WarehouseId = 1
+                        SaleId = null,
+                        WarehouseId = 2
                     };
 
-                    App.db.CompositionOrderMaterials.Add(newComposition);
+                    App.db.CompositionSales.Add(newComposition);
                 }
-                
+
 
                 App.db.SaveChanges();
                 NavigationService.GoBack();
@@ -69,7 +71,7 @@ namespace DigitalBusinessOpportunities.Pages
 
         private void BTBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack(); 
+            NavigationService.GoBack();
         }
     }
 }

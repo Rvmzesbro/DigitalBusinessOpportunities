@@ -146,7 +146,6 @@
     <EntitySetMapping Name="OrderPurchaseMaterials">
       <EntityTypeMapping TypeName="DigitalBusinessOpportunitiesModel.OrderPurchaseMaterials">
         <MappingFragment StoreEntitySet="OrderPurchaseMaterials">
-          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -156,9 +155,7 @@
     <EntitySetMapping Name="Sales">
       <EntityTypeMapping TypeName="DigitalBusinessOpportunitiesModel.Sales">
         <MappingFragment StoreEntitySet="Sales">
-          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
