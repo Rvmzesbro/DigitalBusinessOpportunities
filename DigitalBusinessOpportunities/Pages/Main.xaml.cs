@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,6 +42,9 @@ namespace DigitalBusinessOpportunities.Pages
             DGOrder.ItemsSource = App.db.OrderPurchaseMaterials.ToList();
             DGCompositionSales.ItemsSource = App.db.CompositionSales.Where(p => p.SaleId == null).ToList();
             DGSales.ItemsSource = App.db.Sales.ToList();
+            DGProducts.ItemsSource = App.db.CompositionProductions.Where(p => p.OrderId == null).ToList();
+            DGOrderProduction.ItemsSource = App.db.OrderProductions.Where(p => p.Status != "завершен").ToList();
+            DGStageProduction.ItemsSource = App.db.StageProductions.Where(p => p.Status != "завершен").ToList();
         }
 
         private void BTBuy_Click(object sender, RoutedEventArgs e)
@@ -125,6 +129,30 @@ namespace DigitalBusinessOpportunities.Pages
 
             }
 
+            if (TIProductsProduction.IsSelected)
+            {
+                var compositions = App.db.CompositionProductions.Where(p => p.OrderId == null).ToList();
+
+                if (compositions.Count != 0)
+                {
+                    var newOrder = new OrderProductions()
+                    {
+                        Date = DateTime.Now,
+                        Status = "в процессе"
+                    };
+                    App.db.OrderProductions.Add(newOrder);
+                    App.db.SaveChanges(); 
+                    
+
+                    foreach (var composition in compositions)
+                    {
+                        composition.OrderId = newOrder.Id;
+                    }
+                    App.db.SaveChanges();
+                    Refresh();
+                }
+            }
+
         }
 
         private void BTAdd_Click(object sender, RoutedEventArgs e)
@@ -137,6 +165,14 @@ namespace DigitalBusinessOpportunities.Pages
             if (TISalesNomenclature.IsSelected)
             {
                 NavigationService.Navigate(new Pages.AddEditSales(null));
+            }
+            if (TIProductsProduction.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditProduction(null));
+            }
+            if (TIStageProduction.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditStageProduction(null));
             }
         }
 
@@ -156,6 +192,15 @@ namespace DigitalBusinessOpportunities.Pages
                 if (DGCompositionSales.SelectedItem is CompositionSales product)
                 {
                     App.db.CompositionSales.Remove(product);
+                    App.db.SaveChanges();
+                    Refresh();
+                }
+            }
+            if (TIProductsProduction.IsSelected)
+            {
+                if (DGProducts.SelectedItem is CompositionProductions product)
+                {
+                    App.db.CompositionProductions.Remove(product);
                     App.db.SaveChanges();
                     Refresh();
                 }
@@ -193,6 +238,37 @@ namespace DigitalBusinessOpportunities.Pages
             {
                 NavigationService.Navigate(new Pages.CompositiomSalesOrder(order));
             }
+        }
+
+        private void DGProducts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if(DGProducts.SelectedItem is CompositionProductions product)
+            {
+                NavigationService.Navigate(new Pages.AddEditProduction(product));
+            }
+        }
+
+        private void DGOrderProduction_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGOrderProduction.SelectedItem is OrderProductions product)
+            {
+                NavigationService.Navigate(new Pages.CompositionProductProduction(product));
+            }
+        }
+
+        private void DGStageProduction_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void DGMaterialProduction_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void DGLaborProduction_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

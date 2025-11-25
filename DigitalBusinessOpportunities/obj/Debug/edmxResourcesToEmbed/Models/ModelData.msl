@@ -180,7 +180,6 @@
           <ScalarProperty Name="StageNumber" ColumnName="StageNumber" />
           <ScalarProperty Name="Unit" ColumnName="Unit" />
           <ScalarProperty Name="Count" ColumnName="Count" />
-          <ScalarProperty Name="NomenclatureId" ColumnName="NomenclatureId" />
           <ScalarProperty Name="CompositionOrderId" ColumnName="CompositionOrderId" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="Id" ColumnName="Id" />

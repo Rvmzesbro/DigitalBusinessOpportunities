@@ -23,7 +23,7 @@ namespace DigitalBusinessOpportunities.Models
     
         public int Id { get; set; }
         public Nullable<int> NumberStage { get; set; }
-        public Nullable<int> NameStage { get; set; }
+        public string NameStage { get; set; }
         public Nullable<int> SpecificationId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

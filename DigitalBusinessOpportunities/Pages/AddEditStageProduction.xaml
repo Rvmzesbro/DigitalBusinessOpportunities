@@ -1,0 +1,71 @@
+﻿<Page x:Class="DigitalBusinessOpportunities.Pages.AddEditStageProduction"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DigitalBusinessOpportunities.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditStageProduction">
+
+    <Viewbox Margin="100">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0"
+            Margin="0 0 10 0"
+            >
+                
+                <TextBlock Text="Введите номер заказа"/>
+                <TextBox x:Name="TBOrder"
+Width="100"
+            Text="{Binding OrderId}"/>
+                <TextBlock Text="Введите номенклатуру"/>
+                <ComboBox x:Name="CBNomenclature"
+Margin="0 0 0 10"
+Width="100"
+                          SelectedItem="{Binding Nomenclatures}"/>
+
+                <TextBox x:Name="TBUnit"
+Width="100"
+            Text="{Binding Unit}"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Введите номер этапа"/>
+                <TextBox x:Name="TBStageNumber"
+             Width="100"
+                         Text="{Binding Count}"/>
+                <TextBlock Text="Введите название этапа"/>
+                <TextBox x:Name="TBStageName"
+             Width="100"
+                         Margin="0 0 0 10"
+                         Text="{Binding Unit}"/>
+                <TextBox x:Name="TBCount"
+Width="100"
+            Text="{Binding Count}"/>
+            </StackPanel>
+
+            <StackPanel Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    Orientation="Horizontal">
+
+                <Button x:Name="BTAdd"
+     Content="Ok"
+     Click="BTAdd_Click"/>
+                <Button x:Name="BTBack"
+    Content="Назад"
+    Click="BTBack_Click"/>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
+</Page>

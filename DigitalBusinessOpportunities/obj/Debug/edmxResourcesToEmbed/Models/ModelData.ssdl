@@ -161,7 +161,6 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderId" Type="int" />
     <Property Name="CompositionOrderId" Type="int" />
-    <Property Name="NomenclatureId" Type="int" />
     <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
     <Property Name="Unit" Type="varchar(max)" />
     <Property Name="StageNumber" Type="int" />
@@ -175,7 +174,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NumberStage" Type="int" />
-    <Property Name="NameStage" Type="int" />
+    <Property Name="NameStage" Type="varchar(max)" />
     <Property Name="SpecificationId" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
@@ -582,18 +581,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_StageProductions_Nomenclatures">
-    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
-    <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Nomenclatures">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="StageProductions">
-        <PropertyRef Name="NomenclatureId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_StageProductions_OrderProductions">
     <End Role="OrderProductions" Type="Self.OrderProductions" Multiplicity="0..1" />
     <End Role="StageProductions" Type="Self.StageProductions" Multiplicity="*" />
@@ -794,10 +781,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_StageProductions_CompositionProductions" Association="Self.FK_StageProductions_CompositionProductions">
       <End Role="CompositionProductions" EntitySet="CompositionProductions" />
-      <End Role="StageProductions" EntitySet="StageProductions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StageProductions_Nomenclatures" Association="Self.FK_StageProductions_Nomenclatures">
-      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
       <End Role="StageProductions" EntitySet="StageProductions" />
     </AssociationSet>
     <AssociationSet Name="FK_StageProductions_OrderProductions" Association="Self.FK_StageProductions_OrderProductions">

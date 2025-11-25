@@ -147,17 +147,27 @@
     <Compile Include="Models\GigaChat\RequestGigaChat.cs" />
     <Compile Include="Models\Partials\CompositionOrderMaterials.cs" />
     <Compile Include="Models\Partials\CompositionSales.cs" />
+    <Compile Include="Models\Partials\Specifications.cs" />
     <Compile Include="Pages\AddEditMaterials.xaml.cs">
       <DependentUpon>AddEditMaterials.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddEditProduction.xaml.cs">
+      <DependentUpon>AddEditProduction.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEditSales.xaml.cs">
       <DependentUpon>AddEditSales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditStageProduction.xaml.cs">
+      <DependentUpon>AddEditStageProduction.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CompositiomSalesOrder.xaml.cs">
       <DependentUpon>CompositiomSalesOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CompositionOrder.xaml.cs">
       <DependentUpon>CompositionOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CompositionProductProduction.xaml.cs">
+      <DependentUpon>CompositionProductProduction.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\NetManager.cs" />
     <Page Include="MainWindow.xaml">
@@ -176,7 +186,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddEditProduction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEditSales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditStageProduction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CompositionOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CompositionProductProduction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

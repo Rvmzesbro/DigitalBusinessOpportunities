@@ -24,11 +24,10 @@ namespace DigitalBusinessOpportunities.Models
         public int Id { get; set; }
         public Nullable<int> OrderId { get; set; }
         public Nullable<int> CompositionOrderId { get; set; }
-        public Nullable<int> NomenclatureId { get; set; }
         public Nullable<decimal> Count { get; set; }
         public string Unit { get; set; }
         public Nullable<int> StageNumber { get; set; }
-        public Nullable<int> StageName { get; set; }
+        public string StageName { get; set; }
         public string Status { get; set; }
         public Nullable<int> WarehouseId { get; set; }
     
@@ -37,7 +36,6 @@ namespace DigitalBusinessOpportunities.Models
         public virtual ICollection<LaborProductions> LaborProductions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialProductions> MaterialProductions { get; set; }
-        public virtual Nomenclatures Nomenclatures { get; set; }
         public virtual OrderProductions OrderProductions { get; set; }
         public virtual Warehouses Warehouses { get; set; }
     }

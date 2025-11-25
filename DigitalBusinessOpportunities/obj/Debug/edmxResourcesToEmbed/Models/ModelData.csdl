@@ -142,10 +142,6 @@
       <End Role="Nomenclatures" EntitySet="Nomenclatures" />
       <End Role="Specifications" EntitySet="Specifications" />
     </AssociationSet>
-    <AssociationSet Name="FK_StageProductions_Nomenclatures" Association="DigitalBusinessOpportunitiesModel.FK_StageProductions_Nomenclatures">
-      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
-      <End Role="StageProductions" EntitySet="StageProductions" />
-    </AssociationSet>
     <AssociationSet Name="FK_WarehouseBalances_Nomenclatures" Association="DigitalBusinessOpportunitiesModel.FK_WarehouseBalances_Nomenclatures">
       <End Role="Nomenclatures" EntitySet="Nomenclatures" />
       <End Role="WarehouseBalances" EntitySet="WarehouseBalances" />
@@ -324,7 +320,6 @@
     <NavigationProperty Name="MaterialProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialProductions_Nomenclatures" FromRole="Nomenclatures" ToRole="MaterialProductions" />
     <NavigationProperty Name="MaterialSpecifications" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_Nomenclatures" FromRole="Nomenclatures" ToRole="MaterialSpecifications" />
     <NavigationProperty Name="Specifications" Relationship="DigitalBusinessOpportunitiesModel.FK_Specifications_Nomenclatures" FromRole="Nomenclatures" ToRole="Specifications" />
-    <NavigationProperty Name="StageProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_StageProductions_Nomenclatures" FromRole="Nomenclatures" ToRole="StageProductions" />
     <NavigationProperty Name="WarehouseBalances" Relationship="DigitalBusinessOpportunitiesModel.FK_WarehouseBalances_Nomenclatures" FromRole="Nomenclatures" ToRole="WarehouseBalances" />
   </EntityType>
   <EntityType Name="OrderProductions">
@@ -375,7 +370,6 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderId" Type="Int32" />
     <Property Name="CompositionOrderId" Type="Int32" />
-    <Property Name="NomenclatureId" Type="Int32" />
     <Property Name="Count" Type="Decimal" Precision="20" Scale="3" />
     <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="StageNumber" Type="Int32" />
@@ -385,7 +379,6 @@
     <NavigationProperty Name="CompositionProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_StageProductions_CompositionProductions" FromRole="StageProductions" ToRole="CompositionProductions" />
     <NavigationProperty Name="LaborProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_LaborProductions_StageProductions" FromRole="StageProductions" ToRole="LaborProductions" />
     <NavigationProperty Name="MaterialProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialProductions_StageProductions" FromRole="StageProductions" ToRole="MaterialProductions" />
-    <NavigationProperty Name="Nomenclatures" Relationship="DigitalBusinessOpportunitiesModel.FK_StageProductions_Nomenclatures" FromRole="StageProductions" ToRole="Nomenclatures" />
     <NavigationProperty Name="OrderProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_StageProductions_OrderProductions" FromRole="StageProductions" ToRole="OrderProductions" />
     <NavigationProperty Name="Warehouses" Relationship="DigitalBusinessOpportunitiesModel.FK_StageProductions_Warehouses" FromRole="StageProductions" ToRole="Warehouses" />
   </EntityType>
@@ -395,7 +388,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NumberStage" Type="Int32" />
-    <Property Name="NameStage" Type="Int32" />
+    <Property Name="NameStage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="SpecificationId" Type="Int32" />
     <NavigationProperty Name="LaborSpecifications" Relationship="DigitalBusinessOpportunitiesModel.FK_LaborSpecifications_StageSpecifications" FromRole="StageSpecifications" ToRole="LaborSpecifications" />
     <NavigationProperty Name="MaterialSpecifications" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_StageSpecifications" FromRole="StageSpecifications" ToRole="MaterialSpecifications" />
@@ -815,18 +808,6 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Specifications">
-        <PropertyRef Name="NomenclatureId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StageProductions_Nomenclatures">
-    <End Type="DigitalBusinessOpportunitiesModel.Nomenclatures" Role="Nomenclatures" Multiplicity="0..1" />
-    <End Type="DigitalBusinessOpportunitiesModel.StageProductions" Role="StageProductions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Nomenclatures">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="StageProductions">
         <PropertyRef Name="NomenclatureId" />
       </Dependent>
     </ReferentialConstraint>
