@@ -130,9 +130,10 @@ AutoGenerateColumns="False"
                     <TabItem x:Name="TIProduction"
 Header="Производство">
                         <TabControl Width="1300"
-                        Height="700">
+                        Height="650">
                             <TabItem Header="Товары для производства"
-                                     x:Name="TIProductsProduction">
+                                     x:Name="TIProductsProduction"
+                                  >
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGProducts"
 IsReadOnly="True"
@@ -148,41 +149,64 @@ AutoGenerateColumns="False"
                                 </ScrollViewer>
                             </TabItem>
                             <TabItem Header="Заказы на производство"
-                                     x:Name="TIOrderProduction">
+                                     x:Name="TIOrderProduction"
+                                    >
                                 <ScrollViewer>
-                                    <DataGrid x:Name="DGOrderProduction"
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <DataGrid x:Name="DGOrderProduction"
 IsReadOnly="True"
 AutoGenerateColumns="False"
                                 MouseDoubleClick="DGOrderProduction_MouseDoubleClick">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
-                                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
+                                                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                                                <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                                                <DataGridTemplateColumn>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <DataGrid ItemsSource="{Binding StageProductions}"
+                                                                IsReadOnly="True"
+                                                                  x:Name="DGStageProduction"
+                                                                 
+AutoGenerateColumns="False"  >
+                                                                <DataGrid.Columns>
+                                                                    <DataGridTextColumn Header="Номер заказа" Binding="{Binding OrderId}"/>
+                                                                    <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderProductions.Date}"/>
+                                                                    <DataGridTextColumn Header="Товар" Binding="{Binding CompositionProductions.Nomenclatures}"/>
+                                                                    <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                                                    <DataGridTextColumn Header="Ед.изм" Binding="{Binding Unit}"/>
+                                                                    <DataGridTextColumn Header="Номер этапа" Binding="{Binding StageNumber}"/>
+                                                                    <DataGridTextColumn Header="Название этапа" Binding="{Binding StageName}"/>
+                                                                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                                                                </DataGrid.Columns>
+                                                            </DataGrid>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+                                        <Button
+x:Name="BTAddStage"
+                                            Grid.Row="1"
+Content="Добавить этап"
+                                            HorizontalAlignment="Left"
+                                            
+
+
+Click="BTAddStage_Click"/>
+                                    </Grid>
+                                   
+                                    
                                 </ScrollViewer>
                             </TabItem>
 
-                            
-                            <TabItem Header="Этапы производства"
-                                     x:Name="TIStageProduction">
-                                <ScrollViewer>
-                                    <DataGrid x:Name="DGStageProduction"
-IsReadOnly="True"
-AutoGenerateColumns="False"
-                                MouseDoubleClick="DGStageProduction_MouseDoubleClick">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Номер заказа" Binding="{Binding OrderId}"/>
-                                            <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderProductions.Date}"/>
-                                            <DataGridTextColumn Header="Товар" Binding="{Binding CompositionProductions.Nomenclatures}"/>
-                                            <DataGridTextColumn Header="Количество" Binding="{Binding CompositionProductions.Count}"/>
-                                            <DataGridTextColumn Header="Ед.изм" Binding="{Binding CompositionProductions.Unit}"/>
-                                            <DataGridTextColumn Header="Номер этапа" Binding="{Binding StageNumber}"/>
-                                            <DataGridTextColumn Header="Название этапа" Binding="{Binding StageName}"/>
-                                            <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </ScrollViewer>
-                            </TabItem>
+                           
 
 
                             <TabItem Header="Материалы для производства"
@@ -193,8 +217,10 @@ IsReadOnly="True"
 AutoGenerateColumns="False"
                                 MouseDoubleClick="DGMaterialProduction_MouseDoubleClick">
                                         <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
-                                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                                            <DataGridTextColumn Header="Номер этапа" Binding="{Binding StageId}"/>
+                                            <DataGridTextColumn Header="Материал" Binding="{Binding Nomenclatures}"/>
+                                            <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                            <DataGridTextColumn Header="Ед.изм" Binding="{Binding Unit}"/>
                                         </DataGrid.Columns>
                                     </DataGrid>
                                 </ScrollViewer>
@@ -223,12 +249,229 @@ AutoGenerateColumns="False"
 Header="Прочее">
                         <TabControl Width="1300"
                         Height="700">
-                            <TabItem Header="das">
-
+                            <TabItem Header="Номенклатура">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGNomenclature"
+                                              AutoGenerateColumns="False"
+                                              IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                            <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
+                                            <DataGridTextColumn Header="Артикул" Binding="{Binding Article}"/>
+                                            <DataGridTextColumn Header="ЕД.изм" Binding="{Binding Unit}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
                             </TabItem>
-                            <TabItem Header="das">
-
+                            
+                            
+                            <TabItem Header="Бригада">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGBrigade"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                            <DataGridTextColumn Header="Оборудование" Binding="{Binding Equipments.Name}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
                             </TabItem>
+
+
+                            <TabItem Header="Работник">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGWorker"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Состав бригады">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGCompositionBrigade"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Бригада" Binding="{Binding Brigades}"/>
+                                            <DataGridTextColumn Header="Работник" Binding="{Binding Workers}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+
+                            <TabItem Header="Цех">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGWorkshop"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+                            <TabItem Header="Оборудование">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGEquipment"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                            <DataGridTextColumn Header="Цех" Binding="{Binding Workshops}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+                            <TabItem Header="Спецификация">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGSpecification"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures}"/>
+                                            <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                            <DataGridTextColumn Header="ЕД.изм" Binding="{Binding Unit}"/>
+                                            <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Этапы спецификации">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGStageSpecification"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Номер этапа" Binding="{Binding NumberStage}"/>
+                                            <DataGridTextColumn Header="Название этапа" Binding="{Binding NameStage}"/>
+                                            <DataGridTextColumn Header="Спецификация" Binding="{Binding Specifications}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Материалы спецификации">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGMaterialSpecification"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Номер этапа" Binding="{Binding StageId}"/>
+                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures}"/>
+                                            <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                            <DataGridTextColumn Header="ЕД.изм" Binding="{Binding Unit}"/>
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Трудозатраты спецификации">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGLaborSpecification"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Номер этапа" Binding="{Binding StageId}"/>
+                                            <DataGridTextColumn Header="Вид работы" Binding="{Binding WorkTypes}"/>
+                                            <DataGridTextColumn Header="Количество времени (минут)" Binding="{Binding CountMinut}"/>
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Склад">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGWareHouse"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
+                                            <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+
+                            <TabItem Header="Баланс склада">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGBalanceWarehouse"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Склад" Binding="{Binding Warehouses}"/>
+                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures}"/>
+                                            <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Перемещение по складам">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGTransferWarehouse"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Состав перемещения">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGCompositionTransferWarehouse"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="От куда" Binding="{Binding Warehouses}"/>
+                                            <DataGridTextColumn Header="Куда" Binding="{Binding Warehouses}"/>
+                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures}"/>
+                                            <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                            <DataGridTextColumn Header="Трансфер" Binding="{Binding TransferWarehouses}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
+
+                            <TabItem Header="Вид работы">
+                                <ScrollViewer>
+                                    <DataGrid x:Name="DGWorkType"
+                                              AutoGenerateColumns="False"
+IsReadOnly="True">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                            <DataGridTextColumn Header="Сумма за час" Binding="{Binding CostPerHour}"/>
+                                            </DataGrid.Columns>
+                                    </DataGrid>
+                                </ScrollViewer>
+                            </TabItem>
+
                         </TabControl>
                     </TabItem>
                 </TabControl>
@@ -248,6 +491,7 @@ Content="Заказать"
 
 
 Click="BTBuy_Click"/>
+                   
                 </StackPanel>
             </Grid>
             

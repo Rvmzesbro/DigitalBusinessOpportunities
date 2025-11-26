@@ -145,9 +145,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\GigaChat\RequestGigaChat.cs" />
+    <Compile Include="Models\Partials\Brigades.cs" />
     <Compile Include="Models\Partials\CompositionOrderMaterials.cs" />
+    <Compile Include="Models\Partials\CompositionProductions.cs" />
     <Compile Include="Models\Partials\CompositionSales.cs" />
     <Compile Include="Models\Partials\Specifications.cs" />
+    <Compile Include="Models\Partials\StageProductions.cs" />
+    <Compile Include="Models\Partials\TransferWarehouses.cs" />
+    <Compile Include="Models\Partials\Warehouses.cs" />
+    <Compile Include="Models\Partials\Workers.cs" />
+    <Compile Include="Models\Partials\Workshops.cs" />
+    <Compile Include="Models\Partials\WorkTypes.cs" />
+    <Compile Include="Pages\AddEditMaterialProduction.xaml.cs">
+      <DependentUpon>AddEditMaterialProduction.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEditMaterials.xaml.cs">
       <DependentUpon>AddEditMaterials.xaml</DependentUpon>
     </Compile>
@@ -182,6 +193,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddEditMaterialProduction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEditMaterials.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -373,7 +373,7 @@
     <Property Name="Count" Type="Decimal" Precision="20" Scale="3" />
     <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="StageNumber" Type="Int32" />
-    <Property Name="StageName" Type="Int32" />
+    <Property Name="StageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="WarehouseId" Type="Int32" />
     <NavigationProperty Name="CompositionProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_StageProductions_CompositionProductions" FromRole="StageProductions" ToRole="CompositionProductions" />

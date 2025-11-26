@@ -22,16 +22,23 @@ namespace DigitalBusinessOpportunities.Pages
     public partial class AddEditStageProduction : Page
     {
         public StageProductions stage;
+        public List<string> Statuses = new List<string>()
+        {
+            "в процессе",
+            "завершен"
+        };
         public AddEditStageProduction(StageProductions stageProductions)
         {
             InitializeComponent();
+            Bindings();
             stage = stageProductions;
+          //  CBStatus.SelectedItem = Statuses.FirstOrDefault(p => p.Equals(stage.Status));
             DataContext = stage;
         }
 
         private void Bindings()
         {
-            CBNomenclature.ItemsSource = App.db.CompositionProductions.Where(p => p.OrderId == int.Parse(TBOrder.Text) && p.OrderId != null).ToList();
+            CBStatus.ItemsSource = Statuses;
         }
 
         private void BTAdd_Click(object sender, RoutedEventArgs e)
@@ -47,11 +54,11 @@ namespace DigitalBusinessOpportunities.Pages
                     if (!int.TryParse(TBOrder.Text, out int result1)) return;
                     if (!int.TryParse(TBStageNumber.Text, out int result2)) return;
                     if (!decimal.TryParse(TBCount.Text, out decimal result)) return;
-                    var nomenclature = CBNomenclature.SelectedItem as Nomenclatures;
+                    var nomenclature = CBNomenclature.SelectedItem as CompositionProductions;
                     var NewProduct = new StageProductions()
                     {
                         OrderId = int.Parse(TBOrder.Text),
-                        CompositionOrderId = nomenclature.Id,
+                        CompositionOrderId = nomenclature.NomenclatureId,
                         Count = decimal.Parse(TBCount.Text),
                         Unit = TBUnit.Text,
                         StageName = TBStageName.Text,
@@ -61,7 +68,20 @@ namespace DigitalBusinessOpportunities.Pages
                     };
                     App.db.StageProductions.Add(NewProduct);
                 }
+
+
+                if(stage != null)
+                {
+                    if(stage.Status == Statuses[1])
+                    {
+                        if(stage.OrderProductions.StageProductions.FirstOrDefault(x=>x.Status == Statuses[0])==null)
+                            stage.OrderProductions.Status = stage.Status;
+                    }
+                }
+
                 App.db.SaveChanges();
+
+
                 NavigationService.GoBack();
             }
         }
@@ -69,6 +89,20 @@ namespace DigitalBusinessOpportunities.Pages
         private void BTBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void TBOrder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TBOrder.Text))
+            {
+               CBNomenclature.ItemsSource = null;
+                return;
+            }
+            else
+            {
+                var orderId = int.Parse(TBOrder.Text);
+                CBNomenclature.ItemsSource = App.db.CompositionProductions.Where(p => p.OrderId == orderId && p.OrderId != null).ToList();
+            }
         }
     }
 }

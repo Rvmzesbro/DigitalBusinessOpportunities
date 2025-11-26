@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\App.xaml
-81613784461
+101989060974
 21304076067
-461430096770
+56411774676
 47-1114787011
-MainWindow.xaml;Pages\AddEditMaterials.xaml;Pages\AddEditProduction.xaml;Pages\AddEditSales.xaml;Pages\CompositiomSalesOrder.xaml;Pages\CompositionOrder.xaml;Pages\CompositionProductProduction.xaml;Pages\Main.xaml;
+MainWindow.xaml;Pages\AddEditMaterialProduction.xaml;Pages\AddEditMaterials.xaml;Pages\AddEditProduction.xaml;Pages\AddEditSales.xaml;Pages\AddEditStageProduction.xaml;Pages\CompositiomSalesOrder.xaml;Pages\CompositionOrder.xaml;Pages\CompositionProductProduction.xaml;Pages\Main.xaml;
 
 False
 

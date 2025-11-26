@@ -164,7 +164,7 @@
     <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
     <Property Name="Unit" Type="varchar(max)" />
     <Property Name="StageNumber" Type="int" />
-    <Property Name="StageName" Type="int" />
+    <Property Name="StageName" Type="varchar(max)" />
     <Property Name="Status" Type="varchar(max)" />
     <Property Name="WarehouseId" Type="int" />
   </EntityType>

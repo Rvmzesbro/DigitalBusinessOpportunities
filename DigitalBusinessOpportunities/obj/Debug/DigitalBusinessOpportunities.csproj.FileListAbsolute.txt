@@ -87,3 +87,7 @@ C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalB
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditProduction.baml
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\CompositionProductProduction.g.cs
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\CompositionProductProduction.baml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditStageProduction.g.cs
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditStageProduction.baml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditMaterialProduction.g.cs
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditMaterialProduction.baml

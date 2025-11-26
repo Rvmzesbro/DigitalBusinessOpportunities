@@ -44,7 +44,23 @@ namespace DigitalBusinessOpportunities.Pages
             DGSales.ItemsSource = App.db.Sales.ToList();
             DGProducts.ItemsSource = App.db.CompositionProductions.Where(p => p.OrderId == null).ToList();
             DGOrderProduction.ItemsSource = App.db.OrderProductions.Where(p => p.Status != "завершен").ToList();
-            DGStageProduction.ItemsSource = App.db.StageProductions.Where(p => p.Status != "завершен").ToList();
+            DGMaterialProduction.ItemsSource = App.db.MaterialProductions.ToList();
+
+            DGWorkType.ItemsSource = App.db.WorkTypes.ToList();
+            DGCompositionTransferWarehouse.ItemsSource = App.db.CompositionTransfers.ToList();
+            DGTransferWarehouse.ItemsSource = App.db.TransferWarehouses.ToList();
+            DGBalanceWarehouse.ItemsSource = App.db.WarehouseBalances.ToList();
+            DGWareHouse.ItemsSource = App.db.Warehouses.ToList();
+            DGLaborSpecification.ItemsSource = App.db.LaborSpecifications.ToList();
+            DGMaterialSpecification.ItemsSource = App.db.MaterialSpecifications.ToList();
+            DGStageSpecification.ItemsSource = App.db.StageSpecifications.ToList();
+            DGSpecification.ItemsSource = App.db.Specifications.ToList();
+            DGEquipment.ItemsSource = App.db.Equipments.ToList();
+            DGWorkshop.ItemsSource = App.db.Workers.ToList();
+            DGCompositionBrigade.ItemsSource = App.db.CompositionBrigades.ToList();
+            DGWorker.ItemsSource = App.db.Workers.ToList();
+            DGBrigade.ItemsSource = App.db.Brigades.ToList();
+            DGNomenclature.ItemsSource = App.db.Nomenclatures.ToList();
         }
 
         private void BTBuy_Click(object sender, RoutedEventArgs e)
@@ -144,6 +160,7 @@ namespace DigitalBusinessOpportunities.Pages
                     App.db.SaveChanges(); 
                     
 
+
                     foreach (var composition in compositions)
                     {
                         composition.OrderId = newOrder.Id;
@@ -170,9 +187,14 @@ namespace DigitalBusinessOpportunities.Pages
             {
                 NavigationService.Navigate(new Pages.AddEditProduction(null));
             }
-            if (TIStageProduction.IsSelected)
+           
+            if (TIMaterialProduction.IsSelected)
             {
-                NavigationService.Navigate(new Pages.AddEditStageProduction(null));
+                NavigationService.Navigate(new Pages.AddEditMaterialProduction(null));
+            }
+            else
+            {
+                return;
             }
         }
 
@@ -256,10 +278,7 @@ namespace DigitalBusinessOpportunities.Pages
             }
         }
 
-        private void DGStageProduction_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+      
 
         private void DGMaterialProduction_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -270,5 +289,18 @@ namespace DigitalBusinessOpportunities.Pages
         {
 
         }
+
+     
+
+        private void BTAddStage_Click(object sender, RoutedEventArgs e)
+        {
+            if (TIOrderProduction.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditStageProduction(null));
+            }
+        }
+
+
+     
     }
 }
