@@ -16,11 +16,13 @@ namespace DigitalBusinessOpportunities.Models
     {
         public int Id { get; set; }
         public Nullable<int> StageId { get; set; }
-        public Nullable<int> NomenclatureId { get; set; }
+        public Nullable<int> MaterialId { get; set; }
         public Nullable<decimal> Count { get; set; }
         public string Unit { get; set; }
+        public Nullable<int> NomenclatureId { get; set; }
     
         public virtual Nomenclatures Nomenclatures { get; set; }
+        public virtual Nomenclatures Nomenclatures1 { get; set; }
         public virtual StageSpecifications StageSpecifications { get; set; }
     }
 }

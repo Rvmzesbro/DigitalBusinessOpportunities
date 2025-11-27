@@ -249,11 +249,13 @@ AutoGenerateColumns="False"
 Header="Прочее">
                         <TabControl Width="1300"
                         Height="700">
-                            <TabItem Header="Номенклатура">
+                            <TabItem Header="Номенклатура"
+                                     x:Name="TINomeclature">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGNomenclature"
                                               AutoGenerateColumns="False"
-                                              IsReadOnly="True">
+                                              IsReadOnly="True"
+                                              MouseDoubleClick="DGNomenclature_MouseDoubleClick">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
                                             <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
@@ -265,10 +267,12 @@ Header="Прочее">
                             </TabItem>
                             
                             
-                            <TabItem Header="Бригада">
+                            <TabItem Header="Бригада"
+                                     x:Name="TIBrigade">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGBrigade"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGBrigade_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
@@ -279,10 +283,12 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Работник">
+                            <TabItem Header="Работник"
+                                     x:Name="TIWorker">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGWorker"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGWorker_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"/>
@@ -292,10 +298,12 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Состав бригады">
+                            <TabItem Header="Состав бригады"
+                                     x:Name="TICompositionBtigade">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGCompositionBrigade"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGCompositionBrigade_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Бригада" Binding="{Binding Brigades}"/>
@@ -307,10 +315,12 @@ IsReadOnly="True">
 
 
 
-                            <TabItem Header="Цех">
+                            <TabItem Header="Цех"
+                                     x:Name="TIWorkshop">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGWorkshop"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGWorkshop_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
@@ -320,10 +330,12 @@ IsReadOnly="True">
                                 </ScrollViewer>
                             </TabItem>
 
-                            <TabItem Header="Оборудование">
+                            <TabItem Header="Оборудование"
+                                     x:Name="TIEquipment">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGEquipment"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGEquipment_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
@@ -333,10 +345,12 @@ IsReadOnly="True">
                                 </ScrollViewer>
                             </TabItem>
 
-                            <TabItem Header="Спецификация">
+                            <TabItem Header="Спецификация"
+                                     x:Name="TISpecification">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGSpecification"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGSpecification_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures}"/>
@@ -350,10 +364,12 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Этапы спецификации">
+                            <TabItem Header="Этапы спецификации"
+                                     x:Name="TIStageSpecification">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGStageSpecification"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGStageSpecification_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Номер этапа" Binding="{Binding NumberStage}"/>
@@ -365,14 +381,17 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Материалы спецификации">
+                            <TabItem Header="Материалы спецификации"
+                                     x:Name="TIMaterialSpecification">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGMaterialSpecification"
+                                              MouseDoubleClick="DGMaterialSpecification_MouseDoubleClick"
                                               AutoGenerateColumns="False"
 IsReadOnly="True">
                                         <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Номер этапа" Binding="{Binding StageId}"/>
-                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures}"/>
+                                            <DataGridTextColumn Header="Этап" Binding="{Binding StageSpecifications}"/>
+                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures1}"/>
+                                            <DataGridTextColumn Header="Материал" Binding="{Binding Nomenclatures}"/>
                                             <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
                                             <DataGridTextColumn Header="ЕД.изм" Binding="{Binding Unit}"/>
                                         </DataGrid.Columns>
@@ -382,9 +401,11 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Трудозатраты спецификации">
+                            <TabItem Header="Трудозатраты спецификации"
+                                     x:Name="TILaborSpecification">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGLaborSpecification"
+                                              MouseDoubleClick="DGLaborSpecification_MouseDoubleClick"
                                               AutoGenerateColumns="False"
 IsReadOnly="True">
                                         <DataGrid.Columns>
@@ -398,10 +419,12 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Склад">
+                            <TabItem Header="Склад"
+                                     x:Name="TIWarehouse">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGWareHouse"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGWareHouse_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
@@ -414,10 +437,12 @@ IsReadOnly="True">
 
 
 
-                            <TabItem Header="Баланс склада">
+                            <TabItem Header="Баланс склада"
+                                     x:Name="TIBalanceWarehouse">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGBalanceWarehouse"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGBalanceWarehouse_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Склад" Binding="{Binding Warehouses}"/>
@@ -429,10 +454,12 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Перемещение по складам">
+                            <TabItem Header="Перемещение по складам"
+                                     x:Name="TITransferWarehouse">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGTransferWarehouse"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGTransferWarehouse_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
@@ -442,9 +469,11 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Состав перемещения">
+                            <TabItem Header="Состав перемещения"
+                                     x:Name="TICompositionTransferWarehouse">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGCompositionTransferWarehouse"
+                                              MouseDoubleClick="DGCompositionTransferWarehouse_MouseDoubleClick"
                                               AutoGenerateColumns="False"
 IsReadOnly="True">
                                         <DataGrid.Columns>
@@ -459,10 +488,12 @@ IsReadOnly="True">
                             </TabItem>
 
 
-                            <TabItem Header="Вид работы">
+                            <TabItem Header="Вид работы"
+                                     x:Name="TIWorkType">
                                 <ScrollViewer>
                                     <DataGrid x:Name="DGWorkType"
                                               AutoGenerateColumns="False"
+                                              MouseDoubleClick="DGWorkType_MouseDoubleClick"
 IsReadOnly="True">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>

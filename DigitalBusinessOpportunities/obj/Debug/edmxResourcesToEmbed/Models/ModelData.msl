@@ -114,9 +114,10 @@
     <EntitySetMapping Name="MaterialSpecifications">
       <EntityTypeMapping TypeName="DigitalBusinessOpportunitiesModel.MaterialSpecifications">
         <MappingFragment StoreEntitySet="MaterialSpecifications">
+          <ScalarProperty Name="NomenclatureId" ColumnName="NomenclatureId" />
           <ScalarProperty Name="Unit" ColumnName="Unit" />
           <ScalarProperty Name="Count" ColumnName="Count" />
-          <ScalarProperty Name="NomenclatureId" ColumnName="NomenclatureId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
           <ScalarProperty Name="StageId" ColumnName="StageId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>

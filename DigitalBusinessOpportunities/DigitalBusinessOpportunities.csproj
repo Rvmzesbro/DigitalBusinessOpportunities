@@ -149,18 +149,44 @@
     <Compile Include="Models\Partials\CompositionOrderMaterials.cs" />
     <Compile Include="Models\Partials\CompositionProductions.cs" />
     <Compile Include="Models\Partials\CompositionSales.cs" />
+    <Compile Include="Models\Partials\Equipments.cs" />
     <Compile Include="Models\Partials\Specifications.cs" />
     <Compile Include="Models\Partials\StageProductions.cs" />
+    <Compile Include="Models\Partials\StageSpecifications.cs" />
     <Compile Include="Models\Partials\TransferWarehouses.cs" />
     <Compile Include="Models\Partials\Warehouses.cs" />
     <Compile Include="Models\Partials\Workers.cs" />
     <Compile Include="Models\Partials\Workshops.cs" />
     <Compile Include="Models\Partials\WorkTypes.cs" />
+    <Compile Include="Pages\AddEditBalanceWarehouse.xaml.cs">
+      <DependentUpon>AddEditBalanceWarehouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditBrigade.xaml.cs">
+      <DependentUpon>AddEditBrigade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditCompositionBtigade.xaml.cs">
+      <DependentUpon>AddEditCompositionBtigade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditCompositionTransferWarehouse.xaml.cs">
+      <DependentUpon>AddEditCompositionTransferWarehouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditEquipment.xaml.cs">
+      <DependentUpon>AddEditEquipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditLaborSpecification.xaml.cs">
+      <DependentUpon>AddEditLaborSpecification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEditMaterialProduction.xaml.cs">
       <DependentUpon>AddEditMaterialProduction.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddEditMaterials.xaml.cs">
       <DependentUpon>AddEditMaterials.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditMaterialSpecification.xaml.cs">
+      <DependentUpon>AddEditMaterialSpecification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditNomenclature.xaml.cs">
+      <DependentUpon>AddEditNomenclature.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddEditProduction.xaml.cs">
       <DependentUpon>AddEditProduction.xaml</DependentUpon>
@@ -168,8 +194,29 @@
     <Compile Include="Pages\AddEditSales.xaml.cs">
       <DependentUpon>AddEditSales.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddEditSpecification.xaml.cs">
+      <DependentUpon>AddEditSpecification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEditStageProduction.xaml.cs">
       <DependentUpon>AddEditStageProduction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditStageSpecification.xaml.cs">
+      <DependentUpon>AddEditStageSpecification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditTransferWarehouse.xaml.cs">
+      <DependentUpon>AddEditTransferWarehouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditWarehouse.xaml.cs">
+      <DependentUpon>AddEditWarehouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditWorker.xaml.cs">
+      <DependentUpon>AddEditWorker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditWorkshop.xaml.cs">
+      <DependentUpon>AddEditWorkshop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditWorkType.xaml.cs">
+      <DependentUpon>AddEditWorkType.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CompositiomSalesOrder.xaml.cs">
       <DependentUpon>CompositiomSalesOrder.xaml</DependentUpon>
@@ -193,11 +240,43 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddEditBalanceWarehouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditBrigade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditCompositionBtigade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditCompositionTransferWarehouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditEquipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditLaborSpecification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEditMaterialProduction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AddEditMaterials.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditMaterialSpecification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditNomenclature.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,7 +288,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddEditSpecification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEditStageProduction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditStageSpecification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditTransferWarehouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditWarehouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditWorker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditWorkshop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditWorkType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

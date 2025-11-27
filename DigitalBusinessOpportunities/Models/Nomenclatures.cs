@@ -23,6 +23,7 @@ namespace DigitalBusinessOpportunities.Models
             this.CompositionTransfers = new HashSet<CompositionTransfers>();
             this.MaterialProductions = new HashSet<MaterialProductions>();
             this.MaterialSpecifications = new HashSet<MaterialSpecifications>();
+            this.MaterialSpecifications1 = new HashSet<MaterialSpecifications>();
             this.Specifications = new HashSet<Specifications>();
             this.WarehouseBalances = new HashSet<WarehouseBalances>();
         }
@@ -45,6 +46,8 @@ namespace DigitalBusinessOpportunities.Models
         public virtual ICollection<MaterialProductions> MaterialProductions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialSpecifications> MaterialSpecifications { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MaterialSpecifications> MaterialSpecifications1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Specifications> Specifications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

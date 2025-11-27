@@ -134,6 +134,10 @@
       <End Role="Nomenclatures" EntitySet="Nomenclatures" />
       <End Role="MaterialSpecifications" EntitySet="MaterialSpecifications" />
     </AssociationSet>
+    <AssociationSet Name="FK_MaterialSpecifications_Nomenclatures1" Association="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_Nomenclatures1">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="MaterialSpecifications" EntitySet="MaterialSpecifications" />
+    </AssociationSet>
     <AssociationSet Name="FK_MaterialSpecifications_StageSpecifications" Association="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_StageSpecifications">
       <End Role="StageSpecifications" EntitySet="StageSpecifications" />
       <End Role="MaterialSpecifications" EntitySet="MaterialSpecifications" />
@@ -298,10 +302,12 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StageId" Type="Int32" />
-    <Property Name="NomenclatureId" Type="Int32" />
+    <Property Name="MaterialId" Type="Int32" />
     <Property Name="Count" Type="Decimal" Precision="20" Scale="3" />
     <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NomenclatureId" Type="Int32" />
     <NavigationProperty Name="Nomenclatures" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_Nomenclatures" FromRole="MaterialSpecifications" ToRole="Nomenclatures" />
+    <NavigationProperty Name="Nomenclatures1" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_Nomenclatures1" FromRole="MaterialSpecifications" ToRole="Nomenclatures" />
     <NavigationProperty Name="StageSpecifications" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_StageSpecifications" FromRole="MaterialSpecifications" ToRole="StageSpecifications" />
   </EntityType>
   <EntityType Name="Nomenclatures">
@@ -319,6 +325,7 @@
     <NavigationProperty Name="CompositionTransfers" Relationship="DigitalBusinessOpportunitiesModel.FK_CompositionTransfers_Nomenclatures" FromRole="Nomenclatures" ToRole="CompositionTransfers" />
     <NavigationProperty Name="MaterialProductions" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialProductions_Nomenclatures" FromRole="Nomenclatures" ToRole="MaterialProductions" />
     <NavigationProperty Name="MaterialSpecifications" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_Nomenclatures" FromRole="Nomenclatures" ToRole="MaterialSpecifications" />
+    <NavigationProperty Name="MaterialSpecifications1" Relationship="DigitalBusinessOpportunitiesModel.FK_MaterialSpecifications_Nomenclatures1" FromRole="Nomenclatures" ToRole="MaterialSpecifications" />
     <NavigationProperty Name="Specifications" Relationship="DigitalBusinessOpportunitiesModel.FK_Specifications_Nomenclatures" FromRole="Nomenclatures" ToRole="Specifications" />
     <NavigationProperty Name="WarehouseBalances" Relationship="DigitalBusinessOpportunitiesModel.FK_WarehouseBalances_Nomenclatures" FromRole="Nomenclatures" ToRole="WarehouseBalances" />
   </EntityType>
@@ -777,6 +784,18 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_MaterialSpecifications_Nomenclatures">
+    <End Type="DigitalBusinessOpportunitiesModel.Nomenclatures" Role="Nomenclatures" Multiplicity="0..1" />
+    <End Type="DigitalBusinessOpportunitiesModel.MaterialSpecifications" Role="MaterialSpecifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaterialSpecifications">
+        <PropertyRef Name="MaterialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialSpecifications_Nomenclatures1">
     <End Type="DigitalBusinessOpportunitiesModel.Nomenclatures" Role="Nomenclatures" Multiplicity="0..1" />
     <End Type="DigitalBusinessOpportunitiesModel.MaterialSpecifications" Role="MaterialSpecifications" Multiplicity="*" />
     <ReferentialConstraint>

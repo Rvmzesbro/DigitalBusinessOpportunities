@@ -106,9 +106,10 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StageId" Type="int" />
-    <Property Name="NomenclatureId" Type="int" />
+    <Property Name="MaterialId" Type="int" />
     <Property Name="Count" Type="decimal" Precision="20" Scale="3" />
     <Property Name="Unit" Type="varchar(max)" />
+    <Property Name="NomenclatureId" Type="int" />
   </EntityType>
   <EntityType Name="Nomenclatures">
     <Key>
@@ -541,6 +542,18 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="MaterialSpecifications">
+        <PropertyRef Name="MaterialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialSpecifications_Nomenclatures1">
+    <End Role="Nomenclatures" Type="Self.Nomenclatures" Multiplicity="0..1" />
+    <End Role="MaterialSpecifications" Type="Self.MaterialSpecifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclatures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaterialSpecifications">
         <PropertyRef Name="NomenclatureId" />
       </Dependent>
     </ReferentialConstraint>
@@ -768,6 +781,10 @@
       <End Role="MaterialProductions" EntitySet="MaterialProductions" />
     </AssociationSet>
     <AssociationSet Name="FK_MaterialSpecifications_Nomenclatures" Association="Self.FK_MaterialSpecifications_Nomenclatures">
+      <End Role="Nomenclatures" EntitySet="Nomenclatures" />
+      <End Role="MaterialSpecifications" EntitySet="MaterialSpecifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialSpecifications_Nomenclatures1" Association="Self.FK_MaterialSpecifications_Nomenclatures1">
       <End Role="Nomenclatures" EntitySet="Nomenclatures" />
       <End Role="MaterialSpecifications" EntitySet="MaterialSpecifications" />
     </AssociationSet>

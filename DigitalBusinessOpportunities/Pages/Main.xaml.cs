@@ -56,7 +56,7 @@ namespace DigitalBusinessOpportunities.Pages
             DGStageSpecification.ItemsSource = App.db.StageSpecifications.ToList();
             DGSpecification.ItemsSource = App.db.Specifications.ToList();
             DGEquipment.ItemsSource = App.db.Equipments.ToList();
-            DGWorkshop.ItemsSource = App.db.Workers.ToList();
+            DGWorkshop.ItemsSource = App.db.Workshops.ToList();
             DGCompositionBrigade.ItemsSource = App.db.CompositionBrigades.ToList();
             DGWorker.ItemsSource = App.db.Workers.ToList();
             DGBrigade.ItemsSource = App.db.Brigades.ToList();
@@ -192,6 +192,71 @@ namespace DigitalBusinessOpportunities.Pages
             {
                 NavigationService.Navigate(new Pages.AddEditMaterialProduction(null));
             }
+
+
+
+            if (TINomeclature.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditNomenclature(null));
+            }
+            if (TIBrigade.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditBrigade(null));
+            }
+            if (TIWorkType.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditWorkType(null));
+            }
+            if (TICompositionTransferWarehouse.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditCompositionTransferWarehouse(null));
+            }
+            if (TITransferWarehouse.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditTransferWarehouse(null));
+            }
+            if (TIBalanceWarehouse.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditBalanceWarehouse(null));
+            }
+            if (TIWarehouse.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditWarehouse(null));
+            }
+            if (TILaborSpecification.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditLaborSpecification(null));
+            }
+            if (TIMaterialSpecification.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditMaterialSpecification(null));
+            }
+            if (TIStageSpecification.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditStageSpecification(null));
+            }
+            if (TISpecification.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditSpecification(null));
+            }
+            if (TIEquipment.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditEquipment(null));
+            }
+            if (TIWorkshop.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditWorkshop(null));
+            }
+            if (TICompositionBtigade.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditCompositionBtigade(null));
+            }
+            if (TIWorker.IsSelected)
+            {
+                NavigationService.Navigate(new Pages.AddEditWorker(null));
+            }
+            
+
             else
             {
                 return;
@@ -300,7 +365,124 @@ namespace DigitalBusinessOpportunities.Pages
             }
         }
 
+        private void DGNomenclature_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGNomenclature.SelectedItem is Nomenclatures nomenclatures)
+            {
+                NavigationService.Navigate(new Pages.AddEditNomenclature(nomenclatures));
+            }
+        }
 
-     
+        private void DGBrigade_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGBrigade.SelectedItem is Brigades order)
+            {
+                NavigationService.Navigate(new Pages.AddEditBrigade(order));
+            }
+        }
+
+        private void DGWorker_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGWorker.SelectedItem is Workers order)
+            {
+                NavigationService.Navigate(new Pages.AddEditWorker(order));
+            }
+        }
+
+        private void DGCompositionBrigade_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGCompositionBrigade.SelectedItem is CompositionBrigades order)
+            {
+                NavigationService.Navigate(new Pages.AddEditCompositionBtigade(order));
+            }
+        }
+
+        private void DGWorkshop_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGWorkshop.SelectedItem is Workshops order)
+            {
+                NavigationService.Navigate(new Pages.AddEditWorkshop(order));
+            }
+        }
+
+        private void DGEquipment_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGEquipment.SelectedItem is Equipments order)
+            {
+                NavigationService.Navigate(new Pages.AddEditEquipment(order));
+            }
+        }
+
+        private void DGSpecification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGSpecification.SelectedItem is Specifications order)
+            {
+                NavigationService.Navigate(new Pages.AddEditSpecification(order));
+            }
+        }
+
+        private void DGStageSpecification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGStageSpecification.SelectedItem is StageSpecifications order)
+            {
+                NavigationService.Navigate(new Pages.AddEditStageSpecification(order));
+            }
+        }
+
+        private void DGMaterialSpecification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGMaterialSpecification.SelectedItem is MaterialSpecifications order)
+            {
+                NavigationService.Navigate(new Pages.AddEditMaterialSpecification(order));
+            }
+        }
+
+        private void DGLaborSpecification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGSales.SelectedItem is Sales order)
+            {
+                NavigationService.Navigate(new Pages.CompositiomSalesOrder(order));
+            }
+        }
+
+        private void DGWareHouse_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGWareHouse.SelectedItem is Warehouses order)
+            {
+                NavigationService.Navigate(new Pages.AddEditWarehouse(order));
+            }
+        }
+
+        private void DGBalanceWarehouse_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGSales.SelectedItem is Sales order)
+            {
+                NavigationService.Navigate(new Pages.CompositiomSalesOrder(order));
+            }
+        }
+
+        private void DGTransferWarehouse_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGSales.SelectedItem is Sales order)
+            {
+                NavigationService.Navigate(new Pages.CompositiomSalesOrder(order));
+            }
+        }
+
+        private void DGCompositionTransferWarehouse_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGSales.SelectedItem is Sales order)
+            {
+                NavigationService.Navigate(new Pages.CompositiomSalesOrder(order));
+            }
+        }
+
+        private void DGWorkType_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DGWorkType.SelectedItem is WorkTypes order)
+            {
+                NavigationService.Navigate(new Pages.AddEditWorkType(order));
+            }
+        }
     }
 }
