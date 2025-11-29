@@ -35,26 +35,42 @@
                     <TabItem x:Name="TIPurchase"
                          Header="Закупки">
                         <TabControl Width="1300"
-                        Height="700">
+                        Height="650">
 
 
                             <TabItem Header="Закупка материалов"
-                                 x:Name="TIPurchaseMaterial">
+                                 x:Name="TIPurchaseMaterial"
+                                 >
 
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
 
-                                <ScrollViewer>
-                                    <DataGrid x:Name="DGPurchase"
+                                    <ScrollViewer>
+                                        <DataGrid x:Name="DGPurchase"
 IsReadOnly="True"
 AutoGenerateColumns="False"
                                 MouseDoubleClick="DGPurchase_MouseDoubleClick">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures.Name}"/>
-                                            <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
-                                            <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
-                                            <DataGridTextColumn Header="Сумма" Binding="{Binding GetSum}"/>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </ScrollViewer>
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Номенклатура" Binding="{Binding Nomenclatures.Name}"/>
+                                                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                                                <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                                                <DataGridTextColumn Header="Сумма" Binding="{Binding GetSum}"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </ScrollViewer>
+
+                                    <Button Grid.Row="1"
+                                            Content="Прогноз"
+                                             HorizontalAlignment="Left"
+                                            x:Name="BTForecast"
+                                            Click="BTForecast_Click"/>
+
+                                </Grid>
+                                
+                                
                                 
 
 

@@ -1,11 +1,14 @@
 ﻿using DigitalBusinessOpportunities.Models;
-
+using System.Text.Json;
+using DigitalBusinessOpportunities.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DigitalBusinessOpportunities.Models.GigaChat;
 
 namespace DigitalBusinessOpportunities.Pages
 {
@@ -483,6 +487,104 @@ namespace DigitalBusinessOpportunities.Pages
             {
                 NavigationService.Navigate(new Pages.AddEditWorkType(order));
             }
+        }
+
+        private async void BTForecast_Click(object sender, RoutedEventArgs e)
+        {
+            var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (msg, cert, chain, errors) => true
+            };
+
+            var rawData = App.db.MaterialProductions
+            .Include(x => x.Nomenclatures).Include(p => p.StageProductions.OrderProductions)
+            .ToList();
+
+            var rawData1 = App.db.CompositionOrderMaterials
+                .Include(x => x.Nomenclatures).Include(p => p.OrderPurchaseMaterials)
+                .ToList();
+
+            var cleanData = rawData.Select(x => new
+            {
+                Material = x.Nomenclatures != null ? x.Nomenclatures.Name : "Неизвестно", // Берем имя, а не ID
+                Count = x.Count,
+                Type = "Производство",
+                Date = x.StageProductions.OrderProductions.Date 
+            }).ToList();
+
+            var cleanData1 = rawData1.Select(x => new
+            {
+                Material = x.Nomenclatures != null ? x.Nomenclatures.Name : "Неизвестно",
+                Count = x.Count,
+                Type = "Заказ",
+                Date = x.OrderPurchaseMaterials.Date
+            }).ToList();
+
+            var httpClient = new HttpClient(handler);
+            var net = new NetManager(httpClient);
+
+            var uniqueNames = cleanData.Select(x => x.Material)
+                          .Union(cleanData1.Select(x => x.Material))
+                          .Distinct()
+                          .Where(x => x != "Unknown")
+                          .ToList();
+
+            string allowedNamesJson = JsonSerializer.Serialize(uniqueNames);
+
+            string jsonInput = JsonSerializer.Serialize(cleanData) + JsonSerializer.Serialize(cleanData1);
+
+            var request = new GigaChatRequest()
+            {
+                model = "GigaChat",
+                messages = new List<Messages>
+                {
+                    new Messages
+                    {
+                        role = "user",
+                        content = $@"
+                                    Реализуй прогноз потребностей в материалах, который на основе переданных данных о заказах и списаниях сырья за последние 2 года предсказывает потребность на 1–6 месяцев вперед. Также нужен процент уверенности прогноза, который выше при стабильных трендах и ниже при сильных колебаниях данных.
+                                     ВОТ СПИСОК РАЗРЕШЕННЫХ НОМЕНКЛАТУР (СЛОВАРЬ):
+                                        {allowedNamesJson}
+                        
+                                    ОТВЕЧАЙ СТРОГО В ФОРМАТЕ JSON.
+                                    НЕ ДОБАВЛЯЙ НИКАКОГО ТЕКСТА ДО ИЛИ ПОСЛЕ JSON.
+                                    НЕ ПИШИ ОБЪЯСНЕНИЙ.
+                                    Только JSON массив.
+                        
+                                    Пример формата ответа:
+                                    [
+                                      {{
+                                        ""nomenclature"": ""номенклатура из данных"",
+                                        ""count"": 200,
+                                        ""percent"": 10
+                                      }},
+                                      ...
+                                    ]
+                        
+                                    Вот исходные данные: о расходах и приходов материала  { jsonInput }"
+                    }
+                },
+                stream = false,
+                repetition_penalty = 1
+            };
+
+            var result = await net.PostAsync<GigaChatRequest, GigaChatResponse>("https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
+    request);
+
+            //if (result?.choices == null || result.choices.Count == 0)
+            //{
+            //    MessageBox.Show("Пустой ответ от API");
+            //    return;
+            //}
+
+            var answer = result.choices[0].message.content;
+
+            string cleanJson = answer.Replace("```json", "").Replace("```", "").Trim();
+
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true};
+            var forecastList = JsonSerializer.Deserialize<List<ForecastItem>>(cleanJson, options);
+
+            NavigationService.Navigate(new Pages.ForecastMaterials(forecastList));
         }
     }
 }

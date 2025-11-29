@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\digitalbusinessopportunities\\digitalbusinessopportunities\\pages\\addeditmaterialspecification.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\pages\\addeditmaterialspecification.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\digitalbusinessopportunities\\digitalbusinessopportunities\\pages\\forecastmaterials.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\pages\\forecastmaterials.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\digitalbusinessopportunities\\digitalbusinessopportunities\\models\\materialspecifications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\models\\materialspecifications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\digitalbusinessopportunities\\digitalbusinessopportunities\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\digitalbusinessopportunities\\digitalbusinessopportunities\\pages\\addeditmaterialspecification.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\pages\\addeditmaterialspecification.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\digitalbusinessopportunities\\pages\\forecastmaterials.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\pages\\forecastmaterials.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\digitalbusinessopportunities\\digitalbusinessopportunities\\pages\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\digitalbusinessopportunities\\pages\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\pages\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,8 +23,16 @@
       "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\pages\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\digitalbusinessopportunities\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\digitalbusinessopportunities\\models\\gigachat\\gigachatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\models\\gigachat\\gigachatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\digitalbusinessopportunities\\services\\netmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\services\\netmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\digitalbusinessopportunities\\models\\gigachat\\gigachatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7195F1-1218-4EB9-9EAA-63F110E3FF55}|DigitalBusinessOpportunities\\DigitalBusinessOpportunities.csproj|solutionrelative:digitalbusinessopportunities\\models\\gigachat\\gigachatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,45 +42,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MaterialSpecifications.cs",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Models\\MaterialSpecifications.cs",
-              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Models\\MaterialSpecifications.cs",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Models\\MaterialSpecifications.cs",
-              "RelativeToolTip": "DigitalBusinessOpportunities\\Models\\MaterialSpecifications.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T14:18:24.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddEditMaterialSpecification.xaml",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml",
-              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml*",
-              "RelativeToolTip": "DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml*",
+              "Title": "ForecastMaterials.xaml",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml",
+              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml",
+              "RelativeToolTip": "DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-27T13:35:15.704Z",
+              "WhenOpened": "2025-11-29T11:39:39.548Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AddEditMaterialSpecification.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml.cs",
-              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml.cs",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml.cs",
-              "RelativeToolTip": "DigitalBusinessOpportunities\\Pages\\AddEditMaterialSpecification.xaml.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAADwvzYAAAA6AAAAAAAAAA==",
+              "Title": "ForecastMaterials.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml.cs",
+              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml.cs",
+              "RelativeToolTip": "DigitalBusinessOpportunities\\Pages\\ForecastMaterials.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAkwCIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T13:35:15.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-29T11:40:34.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GigaChatRequest.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatRequest.cs",
+              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatRequest.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatRequest.cs",
+              "RelativeToolTip": "DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T11:05:36.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GigaChatResponse.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatResponse.cs",
+              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatResponse.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatResponse.cs",
+              "RelativeToolTip": "DigitalBusinessOpportunities\\Models\\GigaChat\\GigaChatResponse.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T11:05:35.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NetManager.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Services\\NetManager.cs",
+              "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Services\\NetManager.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Services\\NetManager.cs",
+              "RelativeToolTip": "DigitalBusinessOpportunities\\Services\\NetManager.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowBgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T10:38:12.043Z"
             },
             {
               "$type": "Document",
@@ -83,8 +113,7 @@
               "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\Main.xaml",
               "RelativeToolTip": "DigitalBusinessOpportunities\\Pages\\Main.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-23T15:03:02.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T15:03:02.042Z"
             },
             {
               "$type": "Document",
@@ -94,10 +123,9 @@
               "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Pages\\Main.xaml.cs",
               "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Pages\\Main.xaml.cs",
               "RelativeToolTip": "DigitalBusinessOpportunities\\Pages\\Main.xaml.cs",
-              "ViewState": "AgIAAJsBAAAAAAAAAADwv60BAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACsCAAAAAAAAAAAAACgCAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T15:03:01.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T15:03:01.31Z"
             }
           ]
         }
@@ -107,11 +135,11 @@
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
-        "Id": "48535c8c-71f4-4d04-a7ba-29dab8cc5fa9",
+        "Id": "a0d892e8-d631-44fc-9754-17a4eea14070",
         "Display": 1,
-        "X": 545,
-        "Y": 540,
-        "Width": 1553,
+        "X": 344,
+        "Y": 647,
+        "Width": 1528,
         "Height": 724,
         "WindowState": 2
       },
@@ -122,7 +150,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "ModelData.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\DigitalBusinessOpportunities\\DigitalBusinessOpportunities\\Models\\ModelData.edmx",
               "RelativeDocumentMoniker": "DigitalBusinessOpportunities\\Models\\ModelData.edmx",

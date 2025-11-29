@@ -121,3 +121,11 @@ C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalB
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditWorker.baml
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditWorkshop.baml
 C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\AddEditWorkType.baml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\System.IO.Pipelines.dll
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\System.Text.Json.dll
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\System.IO.Pipelines.xml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\bin\Debug\System.Text.Json.xml
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\ForecastMaterials.g.cs
+C:\Users\web2\Desktop\VisualStudioProjects\DigitalBusinessOpportunities\DigitalBusinessOpportunities\obj\Debug\Pages\ForecastMaterials.baml

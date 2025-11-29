@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="50a4e55e59e0472bac4584c5939a065f" Name="Diagram1" ZoomLevel="152">
+      <Diagram DiagramId="50a4e55e59e0472bac4584c5939a065f" Name="Diagram1" ZoomLevel="106">
         <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.Brigades" Width="1.5" PointX="10.5" PointY="29.125" />
         <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.CompositionBrigades" Width="1.5" PointX="12.75" PointY="29.25" />
         <EntityTypeShape EntityType="DigitalBusinessOpportunitiesModel.CompositionOrderMaterials" Width="1.5" PointX="3" PointY="14.125" />
